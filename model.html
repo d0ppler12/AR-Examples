@@ -17,12 +17,6 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-
-<!-- 
-  Example created by Lee Stemkoski: https://github.com/stemkoski
-  Based on the AR.js library and examples created by Jerome Etienne: https://github.com/jeromeetienne/AR.js/
--->
-
 <script>
 
 var scene, camera, renderer, clock, deltaTime, totalTime;
@@ -127,25 +121,15 @@ function initialize()
 	
 	new THREE.MTLLoader()
 		.setPath( 'models/' )
-		.load( 'burgir.mtl', function ( materials ) {
+		.load( 'burger.mtl', function ( materials ) {
 			materials.preload();
 			new THREE.OBJLoader()
 				.setMaterials( materials )
 				.setPath( 'models/' )
-				.load( 'burgir.obj', function ( group ) {
-					let xz=0.0;
-					console.log(group.children);
-					// for(let i=0;i<group.children.length;i++){
-						let mesh0 = group.children[1];
+				.load( 'burger.obj', function ( group ) {
+					let mesh0 = group.children[0];
 					mesh0.material.side = THREE.DoubleSide;
-					console.log(mesh0);
-					if(1==1){
-						mesh0.position.y=0.25;
-					}
-					else{
-					mesh0.position.y = 0.25+xz;
-					xz+=0.025;
-					}
+					mesh0.position.y=0.25;
 					mesh0.scale.set(0.25,0.25,0.25);
 					markerRoot1.add(mesh0);
 					}
