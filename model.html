@@ -122,8 +122,8 @@ function initialize()
 	
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
-	let model=["burger.obj","cake.obj"];
-	let mat=["burger.mtl","cake.mtl"];
+	let model=["burger.obj","cake.obj","pizza.obj"];
+	let mat=["burger.mtl","cake.mtl","pizza.mtl"];
 	let pos=[0.25,0.0];
 	new THREE.MTLLoader()
 		.load( 'models/'+mat[i], function ( materials ) {
